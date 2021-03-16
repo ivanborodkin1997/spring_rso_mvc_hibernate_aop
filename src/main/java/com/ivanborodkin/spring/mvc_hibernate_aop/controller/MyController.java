@@ -19,13 +19,6 @@ public class MyController {
     private MemberService memberService;
 
     @RequestMapping("/")
-    public String showAllMembers(Model model) {
-        List<Member> allMembers = memberService.getAllMembers();
-        model.addAttribute("allMembs", allMembers);
-        return "all-members";
-    }
-
-    @RequestMapping("/addNewMember")
     public String addNewMember(Model model) {
 
         Member member = new Member();
@@ -34,12 +27,21 @@ public class MyController {
         return "member-info";
     }
 
-    @RequestMapping("/saveEmployee")
-    public String saveMember(@ModelAttribute("member") Member member) {
+    @RequestMapping("/showAllMembs")
+    public String showAllMembers(Model model) {
+        List<Member> allMembers = memberService.getAllMembers();
+        model.addAttribute("allMembs", allMembers);
+        return "all-members";
+    }
+
+
+    @RequestMapping("/saveMember")
+    public String saveMember(@ModelAttribute("member")
+                                         Member member) {
 
         memberService.saveMember(member);
 
-        return "redirect:/";
+        return "redirect:/showAllMembs";
     }
 
     @RequestMapping("/updateInfo")
@@ -54,6 +56,6 @@ public class MyController {
     public String deleteMember(@RequestParam("memId") int id, Model model) {
 
         memberService.deleteMember(id);
-        return "redirect:/";
+        return "redirect:/showAllMembs";
     }
 }

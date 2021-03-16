@@ -31,7 +31,7 @@
         <tr>
             <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.firstName}</td>
             <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.secondName}</td>
-            <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.lastName}</td>
+            <td style="width: 50px; padding: 7px 0; border: 1px solid #800080; text-align: center; font-size: 100%;">${mem.lastName}</td>
             <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.dateOfBirth}</td>
             <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.university}</td>
             <td style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">${mem.course}</td>
@@ -52,9 +52,6 @@
 
 </table>
 <br>
-<input type="button" value="Добавить участинка"
-       onclick="window.location.href='addNewMember'"/>
-
 
 </body>
 </html>

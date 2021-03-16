@@ -8,7 +8,7 @@
 <br>
 
 <%--@elvariable id="member" type=""--%>
-<form:form action="saveEmployee" modelAttribute="member">
+<form:form action="saveMember" modelAttribute="member">
 
     <form:hidden path="id"/>
 
@@ -30,7 +30,7 @@
     <br><br>
     Социальные сети <form:input path="socialNetworks"/>
     <br><br>
-    <input type="submit" value="Заполнить">
+    <input type="submit" value="Заполнить"/>
 
 </form:form>
 
