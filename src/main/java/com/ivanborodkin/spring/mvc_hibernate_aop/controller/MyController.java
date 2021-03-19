@@ -19,12 +19,22 @@ public class MyController {
     private MemberService memberService;
 
     @RequestMapping("/")
+    public String toComeIn() {
+        return "input";
+    }
+
+    @RequestMapping("/addNewMember")
     public String addNewMember(Model model) {
 
         Member member = new Member();
         model.addAttribute("member", member);
 
         return "member-info";
+    }
+
+    @RequestMapping("/thanks")
+    public String thanks() {
+        return "thanks";
     }
 
     @RequestMapping("/showAllMembs")
@@ -41,7 +51,7 @@ public class MyController {
 
         memberService.saveMember(member);
 
-        return "redirect:/showAllMembs";
+        return "redirect:/thanks";
     }
 
     @RequestMapping("/updateInfo")
