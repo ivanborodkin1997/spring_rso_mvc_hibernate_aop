@@ -4,11 +4,11 @@
 <html>
 <head> <meta charset="UTF-8" /> </head>
 <body>
-<h2>Добро пожаловать в студенческие отряды Орловской области! Заполни заявку и представители регионального отделения свяжутся с тобой</h2>
+<h2>Изменение данных участника</h2>
 <br>
 
 <%--@elvariable id="member" type=""--%>
-<form:form action="saveNewMember" modelAttribute="member">
+<form:form action="saveMember" modelAttribute="member">
 
     <form:hidden path="id"/>
 
@@ -38,3 +38,4 @@
 
 </body>
 </html>
+

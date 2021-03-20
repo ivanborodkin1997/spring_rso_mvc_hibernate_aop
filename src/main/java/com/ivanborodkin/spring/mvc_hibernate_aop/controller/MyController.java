@@ -45,20 +45,29 @@ public class MyController {
     }
 
 
-    @RequestMapping("/saveMember")
-    public String saveMember(@ModelAttribute("member")
+    @RequestMapping("/saveNewMember")
+    public String saveNewMember(@ModelAttribute("member")
                                          Member member) {
 
         memberService.saveMember(member);
+            return "redirect:/thanks";
 
-        return "redirect:/thanks";
+    }
+
+    @RequestMapping("/saveMember")
+    public String saveMember(@ModelAttribute("member")
+                                        Member member) {
+
+        memberService.saveMember(member);
+        return "redirect:/showAllMembs";
+
     }
 
     @RequestMapping("/updateInfo")
     public String updateMember(@RequestParam("memId") int id, Model model) {
         Member member = memberService.getMember(id);
         model.addAttribute("member", member);
-        return "member-info";
+        return "changing-member";
 
     }
 
