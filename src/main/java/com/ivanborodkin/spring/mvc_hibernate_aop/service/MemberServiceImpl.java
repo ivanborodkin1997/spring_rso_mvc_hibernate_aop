@@ -2,16 +2,16 @@ package com.ivanborodkin.spring.mvc_hibernate_aop.service;
 
 import com.ivanborodkin.spring.mvc_hibernate_aop.dao.MemberDAO;
 import com.ivanborodkin.spring.mvc_hibernate_aop.entity.Member;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    @Autowired
-    private MemberDAO memberDAO;
+    private final MemberDAO memberDAO;
 
     @Override
     public List<Member> getAllMembers() {

@@ -22,10 +22,10 @@
         <th style="width: 50px; padding: 7px 0; border: 1px solid purple; text-align: center; font-size: 100%;">Операции</th>
     </tr>
     <c:forEach var="mem" items="${allMembs}" >
-        <c:url var="updateButton" value="/updateInfo">
+        <c:url var="updateButton" value="/update-info">
             <c:param name="memId" value="${mem.id}"/>
         </c:url>
-        <c:url var="deleteButton" value="/deleteMember">
+        <c:url var="deleteButton" value="/delete-member">
             <c:param name="memId" value="${mem.id}"/>
         </c:url>
         <tr>

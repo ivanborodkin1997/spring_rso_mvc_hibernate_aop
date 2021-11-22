@@ -1,18 +1,17 @@
 package com.ivanborodkin.spring.mvc_hibernate_aop.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "membersoftheorganization")
+@Table(name = "member")
 public class Member {
 
     @Id
@@ -30,7 +29,8 @@ public class Member {
     private String lastName;
 
     @Column(name = "date_of_birth")
-    private String dateOfBirth;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
 
     @Column(name = "university")
     private String university;
@@ -42,7 +42,7 @@ public class Member {
     private String faculty;
 
     @Column(name = "number_of_the_group")
-    private String numberOfTheGroup;
+    private int numberOfTheGroup;
 
     @Column(name = "social_networks")
     private String socialNetworks;

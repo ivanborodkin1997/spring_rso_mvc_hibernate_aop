@@ -8,7 +8,7 @@
 <br>
 
 <%--@elvariable id="member" type=""--%>
-<form:form action="saveMember" modelAttribute="member">
+<form:form action="save-member" modelAttribute="member">
 
     <form:hidden path="id"/>
 
